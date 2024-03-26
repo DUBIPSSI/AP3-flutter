@@ -18,6 +18,12 @@ class _HomePageState extends State<HomePage> {
   List<dynamic> _events = [];
 
   @override
+  void initState() {
+    super.initState();
+    fetchData();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -27,17 +33,12 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(
-                onPressed: () {
-                  fetchData();
-                },
-                child: Text('Fetch Data'),
-              ),
               SizedBox(height: 20),
               Expanded(
                 child: ListView.builder(
                   itemCount: _events.length,
                   itemBuilder: (context, index) {
+                    // Widget builder
                     return Padding(
                       padding:
                           EdgeInsets.symmetric(horizontal: 20, vertical: 10),
