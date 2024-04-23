@@ -5,33 +5,33 @@ import 'package:rolling_bottom_bar/rolling_bottom_bar.dart';
 import 'package:rolling_bottom_bar/rolling_bottom_bar_item.dart';
 import 'pages/homePage.dart';
 import 'pages/loginPage.dart';
-
+ 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
-
+ 
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
-
+ 
 class _MyAppState extends State<MyApp> {
   late final PageController _pageController;
   bool isLoggedIn = false;
-
+ 
   @override
   void initState() {
     super.initState();
     _pageController = PageController();
   }
-
+ 
   @override
   void dispose() {
     _pageController.dispose();
     super.dispose();
   }
-
+ 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
       home: isLoggedIn ? buildHomePage() : buildLoginForm(),
     );
   }
-
+ 
   Widget buildLoginForm() {
     return Scaffold(
       backgroundColor: Colors.black,
@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
-
+ 
   Widget buildHomePage() {
     return Scaffold(
       backgroundColor: Colors.black,
